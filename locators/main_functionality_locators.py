@@ -1,0 +1,18 @@
+from selenium.webdriver.common.by import By
+class MainFuncLocators:
+    TRANSLATOR_TUB = (By.XPATH, ".//p[text() = 'Конструктор']")
+    PERSONAL_AREA = (By.XPATH, ".//p[text() = 'Личный Кабинет']")
+    LOGIN_BUTTON = (By.XPATH, ".//button[text() = 'Войти']")
+    ORDER_FEED = (By.XPATH, ".//p[text() = 'Лента Заказов']")
+    ORDER = (By.XPATH, ".//a[@class = 'OrderHistory_link__1iNby']")
+    INGREDIENT = (By.XPATH, ".//div[@class = 'counter_counter__ZNLkj counter_default__28sqi']")
+    EXIT_TAB = (By.XPATH, '(//button[contains(@class, "Modal_modal__close_modified__3V5XS")])')
+    SAUSES_BUTTON_PARENT = (By.XPATH, ".//span[text() = 'Соусы']/parent::div")
+    CLOSED_WINDOW = (By.XPATH, ".//section[@class = 'Modal_modal__P3_V5']")
+    ADD_TO_ORDER = (By.XPATH, ".//ul[@class = 'BurgerConstructor_basket__list__l9dp_']")
+    ORDER_COUNT = (By.XPATH, ".//p[@class = 'counter_counter__num__3nue1']")
+    INGREDIENT_MOVE = (By.XPATH, ".//img[@alt = 'Флюоресцентная булка R2-D3']")
+    MAKE_ORDER = (By.XPATH, ".//button[text() = 'Оформить заказ']")
+    ORDER_IDENTIFIER = (By.XPATH, ".//p[text() = 'идентификатор заказа']")
+    Email = (By.XPATH, ".//input[@name='name']")
+    PASSWORD = (By.XPATH, ".//input[@name = 'Пароль']")
