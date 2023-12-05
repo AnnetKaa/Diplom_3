@@ -2,8 +2,8 @@ from selenium.webdriver.common.by import By
 class OrderFeedLocators:
     ORDER_FEED = (By.XPATH, ".//p[text() = 'Лента Заказов']")
     ORDER = (By.XPATH, ".//a[@class = 'OrderHistory_link__1iNby']")
-    MODAL_WINDOW = (By.XPATH, ".//div[@class = 'Modal_orderBox__1xWdi Modal_modal__contentBox__sCy8X p-10']")
-    COMPOUND = (By.XPATH, ".//p[@class = 'text text_type_main-medium mb-8']")
+    MODAL_WINDOW = (By.XPATH, '(//div[contains(@class, "Modal_orderBox__1xWdi")])')
+    COMPOUND = (By.XPATH, ".//p[contains(text(),'Cостав')]")
     PERSONAL_AREA = (By.XPATH, ".//p[text() = 'Личный Кабинет']")
     LOGIN_BUTTON = (By.XPATH, ".//button[text() = 'Войти']")
     Email = (By.XPATH, ".//input[@name='name']")
@@ -20,10 +20,8 @@ class OrderFeedLocators:
     NUMBER_ORDER = (By.XPATH, ".//p[@class = 'text text_type_digits-default']")
     CLOSE_WINDOW_ORDER = (By.XPATH, ".//button[@class = 'Modal_modal_overlay__x2ZCr']")
     NUMBER_ORDER_IN_FEED = (By.XPATH, ".//p[@class = 'text text_type_digits-default']")
-    COMPLETED_FOR_ALL_TIME = (By.XPATH, ".//p[@class = 'OrderFeed_number__2MbrQ text text_type_digits-large']")
+    COMPLETED_FOR_ALL_TIME = (By.XPATH, ".//p[contains(@class,'OrderFeed_number__2MbrQ')]")
     TRANSLATOR_TUB = (By.XPATH, ".//p[text() = 'Конструктор']")
-    NUM_ORDER = (By.XPATH, ".//h2[@class = 'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']")
-    NUM_ORDER_IN_WORK = (By.XPATH,
-                 ".//ul[@class = 'OrderFeed_orderListReady__1YFem OrderFeed_orderList__cBvyi']")
-    LIST_ORDERS_IN_WORK = (By.XPATH,
-                         ".//li[@class = 'text text_type_digits-default mb-2']")
+    NUM_ORDER = (By.XPATH, ".//h2[contains(@class,'Modal_modal__title_shadow__3ikwq')]")
+    NUM_ORDER_IN_WORK = (By.XPATH, ".//ul[contains(@class,'OrderFeed_orderListReady__1YFem')]")
+    LIST_ORDERS_IN_WORK = (By.XPATH, ".//li[contains(@class,'text_type_digits-default')]")

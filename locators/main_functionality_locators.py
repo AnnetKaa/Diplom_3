@@ -6,7 +6,7 @@ class MainFuncLocators:
     ORDER_FEED = (By.XPATH, ".//p[text() = 'Лента Заказов']")
     ORDER = (By.XPATH, ".//a[@class = 'OrderHistory_link__1iNby']")
     INGREDIENT = (By.XPATH, ".//div[@class = 'counter_counter__ZNLkj counter_default__28sqi']")
-    EXIT_TAB = (By.XPATH, ".//button[@class = 'Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']")
+    EXIT_TAB = (By.XPATH, '(//button[contains(@class, "Modal_modal__close_modified__3V5XS")])')
     SAUSES_BUTTON_PARENT = (By.XPATH, ".//span[text() = 'Соусы']/parent::div")
     CLOSED_WINDOW = (By.XPATH, ".//section[@class = 'Modal_modal__P3_V5']")
     ADD_TO_ORDER = (By.XPATH, ".//ul[@class = 'BurgerConstructor_basket__list__l9dp_']")

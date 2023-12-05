@@ -9,17 +9,11 @@ class OrderFeed(BasePage):
     @allure.step('Нажать Лента заказов')
     def click_order_feed_tab(self):
         self.find_element(self.locators.ORDER_FEED).click()
-
-    @allure.step('Ожидание кнопки заказов')
-    def wait_click_order_botton(self):
         self.wait_element_to_be_clickable(self.locators.ORDER)
 
     @allure.step('Нажать заказ')
     def click_last_order(self):
         self.find_element(self.locators.ORDER).click()
-
-    @allure.step('Ожидание всплывающего окна')
-    def wait_visibility_modal_window(self):
         self.wait_presence_of_element_located(self.locators.MODAL_WINDOW)
 
     @allure.step('Проверить элемент')
@@ -29,9 +23,6 @@ class OrderFeed(BasePage):
     @allure.step('Нажать Личный кабинет')
     def click_personal_area_tab(self):
         self.find_element(self.locators.PERSONAL_AREA).click()
-
-    @allure.step('Ожидание кнопки Войти')
-    def wait_click_login_botton(self):
         self.wait_element_to_be_clickable(self.locators.LOGIN_BUTTON)
 
     @allure.step('Заполнить поля авторизации')
@@ -42,9 +33,6 @@ class OrderFeed(BasePage):
     @allure.step('Нажать Войти')
     def click_login_tab(self):
         self.find_element(self.locators.LOGIN_BUTTON).click()
-
-    @allure.step('Ожидание кнопки Оформить заказ')
-    def wait_make_order_button(self):
         self.wait_element_to_be_clickable(self.locators.MAKE_ORDER)
 
     @allure.step('Проверка добавления ингредиента в корзину')
@@ -56,31 +44,26 @@ class OrderFeed(BasePage):
     @allure.step('Нажать оформить заказ')
     def click_make_order_tab(self):
         self.find_element(self.locators.MAKE_ORDER).click()
-
-    @allure.step('Ожидание элемента на окне заказа')
-    def wait_visibility_order_identifier(self):
         self.wait_presence_of_element_located(self.locators.ORDER_IDENTIFIER)
 
     @allure.step('Нажать закрыть окно')
     def click_close_window(self):
+        self.wait_presence_of_element_located(self.locators.ORDER_IDENTIFIER)
         self.find_element(self.locators.CLOSE_WINDOW).click()
+        self.wait_element_to_be_clickable(self.locators.MAKE_ORDER)
 
     @allure.step('Нажать История заказов')
     def click_history_tab(self):
         self.find_element(self.locators.HISTORY_ORDERS).click()
-
-    @allure.step('Ожидание кнопки Сохранить')
-    def wait_click_save_botton(self):
-        self.wait_element_to_be_clickable(self.locators.SAVE_BUTTON)
-
-    @allure.step('Ожидание заказа в списке')
-    def wait_click_order_in_list(self):
         self.wait_element_to_be_clickable(self.locators.ORDER_IN_LIST)
-
-    @allure.step('Скролл страницы вниз')
-    def scroll_to_last_order(self):
         element = self.find_elements(self.locators.FIND_ORDER)
         self.scroll(element[-1])
+
+    @allure.step('Нажать Личный кабинет (авторизованная зона)')
+    def click_personal_area_tab_when_autorizied(self):
+        self.find_element(self.locators.PERSONAL_AREA).click()
+        self.wait_element_to_be_clickable(self.locators.SAVE_BUTTON)
+
 
     @allure.step('Получить номер заказа')
     def make_number_of_order(self):
@@ -88,10 +71,13 @@ class OrderFeed(BasePage):
         last_element_text = element[-1].text
         return last_element_text
 
-    @allure.step('Скролл страницы наверх')
-    def scroll_to_order_feed(self):
+    @allure.step('Нажать Лента заказов')
+    def click_order_feed_tab_upstairs(self):
         element = self.find_element(self.locators.ORDER_FEED)
         self.scroll(element)
+        self.find_element(self.locators.ORDER_FEED).click()
+        self.wait_element_to_be_clickable(self.locators.ORDER)
+
 
     @allure.step('Получить номер заказа в Ленте')
     def make_number_of_order_feed(self):
