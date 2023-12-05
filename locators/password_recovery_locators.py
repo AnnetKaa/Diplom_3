@@ -8,7 +8,6 @@ class LocatorsforPasswordRecovery:
     SAVE = (By.XPATH, ".//button[text() = 'Сохранить']")
     PASSWORD = (By.XPATH, ".//label[text()='Пароль']/following-sibling::input")
     VISIBILITY_TAB = (By.XPATH, ".//div[@class ='input__icon input__icon-action']")
-    # NOT_VISIBILITY_TAB = (By.CSS_SELECTOR, ".input.pr-6.pl-6.input_type_text.input_size_default.input_status_active svg")
     NOT_VISIBILITY_TAB = (By.XPATH, '//div[@class="input__icon input__icon-action"]')
     CLASS_CHECK = (By.XPATH, ".//label[text() = 'Пароль']")
     NEW_PASSWORD = (By.XPATH, ".//h2[text() = 'Восстановление пароля']")
